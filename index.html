@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Salubrity Healthcare | Redesigning Healthcare</title>
-    <meta name="description" content="" />
+    <meta name="description" content="Medical Coding And Billing">
+    <meta name="keywords" 
+          content="RCM,Medical Coding,Claims Management,Denials Management,Healthcare Service,Best Healthcare service provider In Dubai,AR Calling,Top Healthare Service Providers">
+    <meta name="author" content="Salubrity Healthcare">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Favicon -->
@@ -125,16 +128,16 @@
             <div class="main-menu text-right">
               <ul class="list-unstyled list-inline">
                 <li class="list-inline-item active">
-                  <a href="#home-section" class="action-menu" data-id="home-section">HOME </a>
+                  <a href="javascript:void(0)" class="action-menu" data-id="home-section">HOME </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#about-section" class="action-menu" data-id="about-section">ABOUT US </a>
+                  <a href="javascript:void(0)" class="action-menu" data-id="about-section">ABOUT US </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#service-section" class="action-menu" data-id="service-section">OUR SERVICES </a>
+                  <a href="javascript:void(0)" class="action-menu" data-id="service-section">OUR SERVICES </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#contact-section" class="action-menu" data-id="contact-section">CONTACT</a>
+                  <a href="javascript:void(0)" class="action-menu" data-id="contact-section">CONTACT</a>
                 </li>
               </ul>
             </div>
@@ -151,23 +154,21 @@
           <div class="col-md-12">
             <div class="mobile-menu">
               <nav id="dropdown">
-                <a href=""><img src="images/logo.png" alt="" /></a>
+                <a href=""><img src="images/logo/header_logo.png" alt="" /></a>
                 <a href=""><i class="fa fa-bell-o"></i></a>
-                <ul class="list-unstyled">
-                  <li>
-                    <a href="">Home</a>
-                    <ul class="list-unstyled">
-                      <li><a href="index.html">Home Style 1</a></li>
-                      <li><a href="index2.html">Home Style 2</a></li>
-                      <li><a href="index3.html">Home Style 3</a></li>
-                      <li><a href="index4.html">Home Style 4</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="">Service</a></li>
-                  <li><a href="">Departments</a></li>
-                  <li><a href="">Doctors</a></li>
-                  <li><a href="">Blog</a></li>
-                  <li><a href="">Contact</a></li>
+                <ul class="list-unstyled">              
+                    <li>
+                      <a href="javascript:void(0)" class="action-menu" data-id="home-section">HOME </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="action-menu" data-id="about-section">ABOUT US </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="action-menu" data-id="service-section">OUR SERVICES </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)" class="action-menu" data-id="contact-section">CONTACT</a>
+                    </li>
                 </ul>
               </nav>
             </div>
@@ -190,6 +191,7 @@
                       class="slider-heading wow fadeInDown"
                       data-wow-duration="1.2s"
                       data-wow-delay="0.2s"
+                      style="background-color: antiquewhite;"
                     >
                       <h1>
                         <!-- <span>Salubrity</span> -->
@@ -212,6 +214,7 @@
                       class="slider-heading wow fadeInDown"
                       data-wow-duration="1.2s"
                       data-wow-delay="0.2s"
+                      style="background-color: antiquewhite;"
                     >
                       <h1>
                         <span>Salubrity</span> Healthcare Cares About Your
@@ -871,16 +874,25 @@
     <!-- Custom JS -->
     <script src="js/plugins.js"></script>
     <script src="js/custom.js"></script>
-    <!-- <script>
-      $(document).ready(function(){
-        
-        $(document).on('click','.action-menu',function(){
-          var link = $(this).attr('data-id');
-          alert(link);
-          window.location.href = '#'+link;
-        })
+    <script>
 
-      })
-    </script> -->
+        $(document).ready(function(){
+          $(".action-menu").click(function(e) {
+            e.preventDefault();
+
+            var TargetDiv = $(this).attr('data-id');
+            // Get the offset position of the target div
+            var targetPosition = $("#"+TargetDiv).offset().top;
+
+            // Animate the scroll to that position
+            $("html, body").animate({
+            scrollTop: targetPosition
+            }, 1000); // 1000ms for smooth scrolling (1 second)
+
+           
+          });
+        });
+
+    </script> 
   </body>
 </html>
